@@ -6,16 +6,16 @@
 <title>주소가 바뀌었습니다 — 국회기록원 프로토타입</title>
 <script>
 /* 예전 주소(oral-history-prototype)를 새 사이트 계층 주소로 옮김
-   /                      → /naa-prototype/contents/oral-history/ (구술기록, #/… 유지)
+   /                      → /naa-prototype/records/oral-history/ (구술기록, #/… 유지)
    /collection/…          → /naa-prototype/collection/ (#member/… 유지)
-   /media/… 등 그 밖의 파일 → /naa-prototype/contents/oral-history/… */
+   /media/… 등 그 밖의 파일 → /naa-prototype/records/oral-history/… */
 (function(){
   var base = "https://yimjhkr68.github.io/naa-prototype/";
   var p = location.pathname.replace(/^\/oral-history-prototype\/?/, "");
   var to;
   if (/^collection(\/|$)/.test(p)) to = base + "collection/";
-  else if (p === "" || p === "index.html") to = base + "contents/oral-history/";
-  else to = base + "contents/oral-history/" + p;
+  else if (p === "" || p === "index.html") to = base + "records/oral-history/";
+  else to = base + "records/oral-history/" + p;
   location.replace(to + location.search + location.hash);
 })();
 </script>
