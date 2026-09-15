@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ko"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>주소가 바뀌었습니다 — 국회기록원 프로토타입</title>
+<script>
+/* 예전 주소(oral-history-prototype)를 새 사이트 계층 주소로 옮김
+   /                      → /naa-prototype/contents/oral-history/ (구술기록, #/… 유지)
+   /collection/…          → /naa-prototype/collection/ (#member/… 유지)
+   /media/… 등 그 밖의 파일 → /naa-prototype/contents/oral-history/… */
+(function(){
+  var base = "https://yimjhkr68.github.io/naa-prototype/";
+  var p = location.pathname.replace(/^\/oral-history-prototype\/?/, "");
+  var to;
+  if (/^collection(\/|$)/.test(p)) to = base + "collection/";
+  else if (p === "" || p === "index.html") to = base + "contents/oral-history/";
+  else to = base + "contents/oral-history/" + p;
+  location.replace(to + location.search + location.hash);
+})();
+</script>
+</head><body style="font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo',sans-serif;padding:40px 20px">
+<p>프로토타입 주소가 바뀌었습니다. 새 주소로 이동합니다.</p>
+<p><a href="https://yimjhkr68.github.io/naa-prototype/">https://yimjhkr68.github.io/naa-prototype/</a></p>
+</body></html>
